@@ -3,9 +3,7 @@ Simple utility to get github user starred repositories
 
 Usage:
 ```
-starred_repos.py [-h] [-t TIMEOUT]
-                        [-repo_parameters REPO_PARAMETERS [REPO_PARAMETERS ...]]
-                        login
+starred_repos.py [-h] [-t TIMEOUT] [-repo_parameters REPO_PARAMETERS [REPO_PARAMETERS ...]] login
 ```
 
 
@@ -16,11 +14,9 @@ Positional arguments:
 
 Optional arguments:
 ```
-  -h, --help            show this help message and exit
-  -t TIMEOUT, --timeout TIMEOUT
-                        Timeout to response
-  -repo_parameters REPO_PARAMETERS [REPO_PARAMETERS ...]
-                        Repository parameters to get
+  -h, --help      show this help message and exit
+  -t TIMEOUT, --timeout TIMEOUT     Timeout to response
+  -repo_parameters REPO_PARAMETERS [REPO_PARAMETERS ...]      Repository parameters to get
 ```
 
 Examples:
