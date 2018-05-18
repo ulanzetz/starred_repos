@@ -22,18 +22,19 @@ def main():
     response = get_response(args.login, args.timeout)
     if response is None:
         print('Timeout exceeded')
-    else:
-        if response.status_code == STATUS_CODE_NOT_FOUND:
-            print('User with such login is not found')
-        elif response.status_code != STATUS_CODE_OK:
-            print('Incorrect response status code: {}. Should be {}'.
-                  format(response.status_code, STATUS_CODE_OK))
-        else:
-            print('Starred repositories of user {}:'.format(args.login))
-            print('Format: {}\n'.
-                  format(' '.join(args.repo_parameters)))
-            print('\n'.join(
-                get_repos_parameters(response.text, args.repo_parameters)))
+        return
+    if response.status_code == STATUS_CODE_NOT_FOUND:
+        print('User with such login is not found')
+        return
+    if response.status_code != STATUS_CODE_OK:
+        print('Incorrect response status code: {}. Should be {}'.
+            format(response.status_code, STATUS_CODE_OK))
+        return
+    print('Starred repositories of user {}:'.format(args.login))
+    print('Format: {}\n'.
+        format(' '.join(args.repo_parameters)))
+    print('\n'.join(get_repos_parameters(response.text, args.repo_parameters)))
+            
 
 
 def get_response(login, timeout):
