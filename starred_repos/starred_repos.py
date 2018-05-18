@@ -6,7 +6,7 @@ from json import loads
 STARRED_REQUEST = 'http://api.github.com/users/{user}/starred'
 STATUS_CODE_NOT_FOUND = 404
 STATUS_CODE_OK = 200
-DEFAULT_REPO_PARAMETERS = ['full_name', 'stargazers_count']
+DEFAULT_REPO_PARAMETERS = ('full_name', 'stargazers_count')
 
 
 def main():
